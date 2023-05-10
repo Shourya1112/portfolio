@@ -1,0 +1,188 @@
+ <Box component={"div"} sx={{ height: "80vh", minHeight: "650px", display: "flex", justifyContent: "center", marginTop: "200px"}} >
+                <Box
+                    component="img"
+                    sx={{ width: "600px", height: "600px"}}
+                    alt="photo"
+                    src="https://res.cloudinary.com/dkrinlbmx/image/upload/v1681811850/Portfolio/5484597_usgwz1.jpg"
+                />
+                <Box component="div" sx={{marginTop: "150px"}}>
+                    <Typography variant="h1" color="primary">HI, I AM</Typography>
+                    <Typography variant="h1" color="white" fontWeight="bold">SHOURYA MISHRA</Typography>
+                    <Typography variant="h4" sx={{ color: "#424242"}}>MERN Stack Developer</Typography>
+                </Box>
+            </Box>
+            <Box component={"div"} sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <Typography color="primary" sx={{ fontSize: "65px", fontWeight: "400"}}>About Me</Typography>
+                <Typography variant="h5" sx={{ marginTop: "20px", marginInline: "50px" , lineHeight: "1.5"}} >Hi there, I'm Shourya, a driven MERN Stack Developer with a solid background in JavaScript and expertise in React.js and Express.js. My love for crafting visually stunning, user-friendly, and high-performing web applications fuels my passion for development. I'm always looking to expand my knowledge and skills while working with experienced professionals in a team-oriented setting.
+                <br/>I'm presently seeking an entry-level job or internship where I can apply my skills and knowledge to actual projects. As a fast learner and a collaborative team player, I bring added value to any team. With my dedication and enthusiasm, I am confident in my ability to deliver successful projects that exceed expectations.</Typography>
+            </Box>
+
+
+            --- contact page 1.0---
+
+import React from "react";
+import { useState } from "react";
+import { Typography, Box, CssBaseline, Button, Card, CardActions, CardContent, CardMedia, FormControl, FilledInput, TextField, Input } from "@mui/material";
+
+const Contact = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    
+  return (
+    <Box variant="div" sx={{ display: "flex", justifyContent: "space-evenly", height: "auto" , backgroundColor: "#050505" , padding: "70px" , marginBottom: "2px"}}>
+        <Box sx={{ marginTop: "20px" }}>
+          <Typography variant="h2">Contact Me</Typography>
+          <FormControl action='/submit'>
+             <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px" }}
+              id="outlined-basic" 
+              label="Name" 
+              variant="outlined"
+              type="text"
+            />
+            <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px" }} 
+              id="outlined-basic" 
+              label="Email" 
+              variant="outlined" 
+              type="email"
+            />
+            <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px" }} 
+              id="outlined-basic" 
+              label="Message" 
+              variant="outlined" 
+              type="text"
+              multiline
+            />
+            <Button variant="contained" sx={{ width: "400px" , margin: "10px",  backgroundColor: "#01537e" , borderRadius: "10px" }}>
+              <Typography variant="h5" sx={{ color: "whitesmoke"}}>Send</Typography>
+            </Button> 
+          </FormControl>
+        </Box>
+        <img
+          src="https://res.cloudinary.com/dkrinlbmx/image/upload/v1682617535/Portfolio/vecteezy_3d-business-mail-send-icon-or-3d-business-important-mail_10915785_381_avecnd.png"
+          alt="message illustration"
+          width="400px"
+        />
+    </Box>
+    )
+}
+
+export default Contact;
+
+
+-----------------------------contact page v2---------------------------------------
+
+import React from "react";
+import { useState } from "react";
+import { Typography, Box, CssBaseline, Button, Card, CardActions, CardContent, CardMedia, FormControl, FilledInput, TextField, Input } from "@mui/material";
+import axios from 'axios';
+
+const Contact = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        axios.post('/submit', { name, email, message })
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
+
+    return (
+        <Box variant="div" sx={{ display: "flex", justifyContent: "space-evenly", height: "auto" , backgroundColor: "#050505" , padding: "70px" , marginBottom: "2px"}}>
+            <Box sx={{ marginTop: "20px" }}>
+                <Typography variant="h2" sx={{}}>Contact Me</Typography>
+                <form onSubmit={handleSubmit}>
+                    <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px"  }}
+                      id="name" 
+                      label="Name" 
+                      variant="outlined"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px" }} 
+                      id="email" 
+                      label="Email" 
+                      variant="outlined" 
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <TextField sx={{ margin: "10px", width: "400px" , borderRadius: "10px" }} 
+                      id="message" 
+                      label="Message" 
+                      variant="outlined" 
+                      type="text"
+                      multiline
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <Button type="submit" variant="contained" sx={{ width: "400px" , margin: "10px",  backgroundColor: "#01537e" , borderRadius: "10px" }}>
+                      <Typography variant="h5" sx={{ color: "whitesmoke"}}>Send</Typography>
+                    </Button> 
+                </form>
+            </Box>
+            <img
+              src="https://res.cloudinary.com/dkrinlbmx/image/upload/v1682617535/Portfolio/vecteezy_3d-business-mail-send-icon-or-3d-business-important-mail_10915785_381_avecnd.png"
+              alt="message illustration"
+              width="400px"
+            />
+        </Box>
+    )
+}
+
+export default Contact;
+
+----------------------------------meme gen pro card--------------------------------------------
+
+<Card 
+                    sx={{ height: "500px" , marginBottom: "30px", padding: "15px" , backgroundColor: "#050505",  borderRadius: "30px" ,  boxShadow: "5" }}
+                    >
+                        <Typography 
+                        variant="h3" 
+                        sx={{ marginBottom: "10px" , color: "#FF914D"}}
+                        >Meme Generator
+                        </Typography>    
+                    <Box sx={{ display: "flex" , marginBottom: "15px"}}>
+                        <CardMedia
+                            component="img"
+                            alt="Meme Generator"
+                            sx={{ borderRadius: "10px" , marginRight: "2%", width: "49%"}}
+                            image="https://res.cloudinary.com/dkrinlbmx/image/upload/v1682526473/Portfolio/projects/Screenshot_10_nbmkhb.png"
+                        />
+                        <CardMedia
+                            component="img"
+                            alt="Meme Generator"
+                            sx={{ borderRadius: "10px" , width: "49%"}}
+                            image="https://res.cloudinary.com/dkrinlbmx/image/upload/v1682526473/Portfolio/projects/Screenshot_10_nbmkhb.png"
+                        />
+                    </Box>
+                        
+                                <Typography sx={{ fontSize: "1.2rem" , listStyle: "none"}}>
+                                    <li>- Developed a front-end web app project using React.</li>
+                                    <li>- Integrated the imgFlip API to allow users to generate memes using pre-defined templates.</li>
+                                    <li>- Implemented features such as selecting a template and adding custom text to the meme.</li>
+                                </Typography>
+                            
+                            <CardActions >
+                                <Button size="medium">More Info...</Button>
+                            </CardActions>
+                    </Card>
+
+------------------------------------corner card-----------------------------------------------------
+<Card sx={{ display: "flex" , width: "auto" , height: "180px" , marginBottom: "20px",  backgroundColor: "#050505",  borderRadius: "30px" ,  boxShadow: "5" , padding: "10px"}}>
+                        <Box sx={{ width: "50%"}}>
+                            <Box sx={{ display: "flex", justifyContent: "center", margin: "5px" , backgroundColor: "#000" , borderRadius: "10px", padding: "7px"}}><Typography variant="h5">Developer</Typography></Box>
+                            <Box sx={{ display: "flex", justifyContent: "center",  margin: "5px" , backgroundColor: "#000" , borderRadius: "10px", padding: "7px"}}><Typography variant="h5">Designer</Typography></Box>
+                            <Box sx={{ display: "flex", justifyContent: "center",  margin: "5px" , backgroundColor: "#000" , borderRadius: "10px", padding: "7px"}}><Typography variant="h5">Thinker</Typography></Box>
+                        </Box>
+                        <Box sx={{ width: "50%"}}>
+                            <Box sx={{ display: "flex", justifyContent: "center",  margin: "5px" , backgroundColor: "#000" , borderRadius: "10px", padding: "7px"}}><Typography variant="h5">Engineer</Typography></Box>
+                            <Box sx={{ display: "flex", justifyContent: "center",  margin: "5px" , backgroundColor: "#000" , borderRadius: "10px", padding: "7px"}}><Typography variant="h5" sx={{ textAlign: "center" , lineHeight: "1.7"}}>Problem<br/>Solver</Typography></Box>
+                        </Box>
+                    </Card>
+
+
+                    

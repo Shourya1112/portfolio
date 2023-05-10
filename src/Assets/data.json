@@ -1,0 +1,23 @@
+{
+  "projects": [
+    {
+      "title": "Notes App",
+      "tag": "Front-end",
+      "description": ["This app allows users to create, edit, and delete notes, as well as format text using Markdown syntax.",
+                      "Used additional libraries such as React-mde, React-split, nanoid and Showdown to build the app.",
+                      "Utilized local storage to enable users to save and access their notes offline."],
+      "github": "https://github.com/Shourya1112/Markdown-Notes-App",
+      "imgSrc": "https://res.cloudinary.com/dkrinlbmx/image/upload/v1682521551/Portfolio/projects/Screenshot_186_ancxhe.png"
+    },
+    {
+      "title": "Meme Generator",
+      "tag": "Front-end",
+      "description": ["Developed a front-end web application using React, JavaScript, HTML, and CSS.",
+                      "Integrated the imgFlip API to allow users to generate memes using pre-defined templates.",
+                      "Implemented features such as selecting a template and adding custom text to the meme."],
+      "github": "https://github.com/Shourya1112/Meme-Generator",
+      "liveUrl": "https://meme-generator-sm.netlify.app/",
+      "imgSrc": "https://res.cloudinary.com/dkrinlbmx/image/upload/v1682526473/Portfolio/projects/Screenshot_10_nbmkhb.png"
+    }
+  ]
+}
