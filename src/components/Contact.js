@@ -31,14 +31,29 @@ const Contact = (props) => {
       contact: {
         display: "flex",
         justifyContent: "space-evenly",
-        height: "65vh",
         width: "100%",
         backgroundColor: "#050505",
         padding: "70px",
         marginBottom: "2px",
       },
-      form: {
+      formPage: {
         width: "400px",
+      },
+      formEl: {
+        width: "100%", 
+        display: "flex", 
+        flexDirection: "column", 
+        justifyContent: "center", 
+        alignItems: "center"
+      },
+      textInput: {
+        borderRadius: "10px"
+      },
+      submitBtn: {
+        width: "100%",
+        backgroundColor: "#01537e",
+        borderRadius: "10px",
+        marginTop: "10px"
       }
     }
     
@@ -48,22 +63,40 @@ const Contact = (props) => {
         width: "100%",
         backgroundColor: "#050505",
         marginBottom: "2px",
-        padding: "5%"
+        padding: "5%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
       },
-      form: {
+      formPage: {
         width: "90%",
-        
+      },
+      formEl: {
+        width: "100%", 
+        display: "flex", 
+        flexDirection: "column", 
+        justifyContent: "center", 
+        alignItems: "center"
+      },
+      textInput: {
+        borderRadius: "10px"
+      },
+      submitBtn: {
+        width: "100%",
+        backgroundColor: "#01537e",
+        borderRadius: "10px",
+        marginTop: "10px"
       }
     }
 
   return (
     <Box className="contact" style={( Mobile ? phoneStyles : pcStyles).contact}>
-      <Box className="contact-form" style={( Mobile ? phoneStyles : pcStyles).form}>
+      <Box className="contact-formPage" style={( Mobile ? phoneStyles : pcStyles).formPage}>
         <Typography variant="h2">Contact Me</Typography>
-        <form  ref={form} onSubmit={sendEmail} sx={{ width: "100%" }}>
-          <FormControl sx={{ width: "100%" , display: "flex" , flexDirection: "column" , justifyContent: "center" , alignItems: "center"}}>
+        <form  ref={form} onSubmit={sendEmail}>
+          <FormControl style={( Mobile ? phoneStyles : pcStyles).formEl}>
           <TextField
-            sx={{ borderRadius: "10px" }}
+            style={( Mobile ? phoneStyles : pcStyles).textInput}
             fullWidth
             id="outlined-basic"
             label="Name"
@@ -74,7 +107,8 @@ const Contact = (props) => {
             required
           />
           <TextField
-            sx={{ width: "100%", borderRadius: "10px" }}
+            style={( Mobile ? phoneStyles : pcStyles).textInput}
+            fullWidth
             id="outlined-basic"
             label="Email"
             variant="outlined"
@@ -84,7 +118,8 @@ const Contact = (props) => {
             required
           />
           <TextField
-            sx={{ width: "100%" , borderRadius: "10px" }}
+            style={( Mobile ? phoneStyles : pcStyles).textInput}
+            fullWidth
             id="outlined-basic"
             label="Message"
             variant="outlined"
@@ -98,12 +133,7 @@ const Contact = (props) => {
           <Button
           type="submit"
           margin="normal"
-          sx={{
-            width: "100%",
-            backgroundColor: "#01537e",
-            borderRadius: "10px",
-            marginTop: "10px"
-          }}
+          style={( Mobile ? phoneStyles : pcStyles).submitBtn}
           >
           <Typography variant="h5" sx={{ color: "white" }}>
           Send

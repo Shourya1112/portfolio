@@ -13,7 +13,7 @@ function Nav(props) {
             height: "60px",
             width: "100%" ,
             position: "relative",
-            marginBottom: "30px",
+            marginBottom: "20px",
             alignitems: "center",
             display: "flex",
             flexDirection: "row",
@@ -32,7 +32,7 @@ function Nav(props) {
             backgroundColor: "whitesmoke", 
             height: "60px", 
             fontSize: "1.7rem" ,  
-            borderRadius: "50px" , 
+            borderRadius: "30px" , 
             paddingInline: "20px",
             textTransform: "capitalize",
             fontWeight: "600",
@@ -116,7 +116,7 @@ function Nav(props) {
                 href="https://drive.google.com/file/d/1zsz81SfjFTP0DLSMgbtnLqtfWTcgP8wn/view?usp=share_link"
                 target="_blank"
                 >
-                    <TextSnippetRounded size="large" color="#050505" sx={{ marginRight: "15px" }}/>
+                    <TextSnippetRounded size="large" color="#050505" sx={{ marginRight: "10px" }}/>
                         Resume
                 </Button>
             </Animation>
