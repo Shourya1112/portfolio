@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef , useState } from 'react';
 import emailjs from '@emailjs/browser';
 import {
   Typography,
@@ -6,23 +6,34 @@ import {
   FormControl,
   TextField,
   Button,
+  Alert,
+  AlertTitle
 } from "@mui/material";
 
 const Contact = (props) => {
   const Mobile = props.Mobile;
 
+  const [error, setError] = useState(null); // Track error state
+  const [success, setSuccess] = useState(null); // Track success state
   
   // ----------------Email component-------------------------
   const form = useRef()
   const sendEmail = (e) => {
     e.preventDefault();
     
-    emailjs.sendForm('service_3jza02', 'template_rwac91p', form.current, 'C4PS8UmEi6zd2EZin')
+    emailjs.sendForm('service_3jza02f', 'template_rwac91p', form.current, 'C4PS8UmEi6zd2EZin')
+
     .then((result) => {
-      console.log(result.text);
-    }, (error) => {
-      console.log(error.text);
+        console.log(result.text);
+        setError(null); // Clear the error
+        setSuccess("Message delivered successfully!"); // Set the success message
+      })
+      .catch((error) => {
+        console.log(error.text);
+        setError("Message not sent — Please try again later!"); // Set the error message
+        setSuccess(null); // Clear the success message
       });
+
       e.target.reset()
     }
     //----------------------------------------------------------
@@ -93,6 +104,18 @@ const Contact = (props) => {
     <Box className="contact" style={( Mobile ? phoneStyles : pcStyles).contact}>
       <Box className="contact-formPage" style={( Mobile ? phoneStyles : pcStyles).formPage}>
         <Typography variant="h2">Contact Me</Typography>
+        {error && ( // Render the error alert if there's an error
+          <Alert severity="error">
+            <AlertTitle>Error</AlertTitle>
+            {error}
+          </Alert>
+        )}
+        {success && ( // Render the success alert if there's a success message
+          <Alert severity="success">
+            <AlertTitle>Success</AlertTitle>
+            {success}
+          </Alert>
+        )}
         <form  ref={form} onSubmit={sendEmail}>
           <FormControl style={( Mobile ? phoneStyles : pcStyles).formEl}>
           <TextField

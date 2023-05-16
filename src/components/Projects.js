@@ -4,11 +4,11 @@ import { Typography , CardMedia , Box , styled , IconButton, Divider} from "@mui
 import { GitHub } from '@mui/icons-material';
 import TvIcon from '@mui/icons-material/Tv';
 
-const Projects = (props) => {
-  const Mobile = props.Mobile;
+const Projects = () => {
 
     const BoxScroll = styled(Box) (() => ({
       height: "80vh",
+      minHeight: "760px",
       borderRadius: "30px",
       padding: "10px",
       overflow: "scroll",
@@ -40,7 +40,7 @@ const Projects = (props) => {
 
 const ProjectComponent = ({ title, description, github, live, image, type, Mobile }) => {
   return (
-    <Box className="projectComponent" style={ Mobile ? {height: "105%"} : {height: "100%"}}>
+    <Box className="projectComponent" sx={{ display: "flex" , flexDirection: "column" , justifyContent: "space-between" , height: "fit-content"}}>
       <Divider/>
       <CardMedia
       component="img"
@@ -48,18 +48,19 @@ const ProjectComponent = ({ title, description, github, live, image, type, Mobil
       alt={title} 
       sx={{ width: "100%" , borderRadius: "15px" , marginTop: "10px" }}
       />
-        <Box>
-        <Typography sx={{ fontSize: "1.5rem" , margin: "10px" , display: "inline-flex" }}>- {title}</Typography>
-        <Box sx={{ backgroundColor: "black" , padding: "5px" , borderRadius: "20px" , margin: "10px" , display: "inline-flex"  }}>
-        <Typography sx={{ fontSize: "1rem" , marginInline: "10px" , textAlign: "center" , fontWeight: "400" }}>{type}</Typography></Box>
+        <Box className="titleBox" sx={{ marginBottom: "15px"}}>
+          <Typography sx={{ fontSize: "2rem" , margin: "10px" , display: "inline-flex" }}>- {title}</Typography>
+          <Box sx={{ backgroundColor: "whitesmoke"  , borderRadius: "20px" , border: "2px solid" , margin: "10px" , display: "inline-flex"  , verticalAlign: "6px" }}>
+            <Typography sx={{ color: "black", fontSize: "1rem" , marginInline: "10px" , textAlign: "center" , fontWeight: "600" }}>{type}</Typography>
+          </Box>
         </Box>
-        <Box>
-            {description.map((desc, i) => (
-              <Typography sx={{ fontSize: "1.3rem" , color: "	#FAF9F6" , listStyles: "none"}} key={i} >- {desc}</Typography>
-            ))}
+        <Box className="descriptionBox">
+            <Typography sx={{ fontSize: "1.3rem" , color: "#f5f5f5" , lineHeight: "1.6" }}>
+              {description}
+            </Typography>
         </Box>
         <br/>
-        <Box sx={{ display: "flex" , justifyContent: "space-evenly" , alignItems: "center" , alignSelf: "flex-end" , marginBottom: "10px"}}>
+        <Box className="linkBox" sx={{ display: "flex" , justifyContent: "space-evenly" , alignItems: "center" , marginBottom: "10px" }}>
             <IconButton 
                 size="large" 
                 href={github}

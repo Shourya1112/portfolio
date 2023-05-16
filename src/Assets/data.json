@@ -3,21 +3,24 @@
     {
       "title": "Notes App",
       "tag": "Front-end",
-      "description": ["This app allows users to create, edit, and delete notes, as well as format text using Markdown syntax.",
-                      "Used additional libraries such as React-mde, React-split, nanoid and Showdown to build the app.",
-                      "Utilized local storage to enable users to save and access their notes offline."],
+      "description": "Effortlessly organize, remember, and access your thoughts with my markdown notes app project. Simplify your digital note-taking experience with seamless formatting, quick editing, and intuitive organization. Streamline your productivity and unleash your creativity with this powerful tool that brings your ideas to life.",
       "github": "https://github.com/Shourya1112/Markdown-Notes-App",
       "imgSrc": "https://res.cloudinary.com/dkrinlbmx/image/upload/v1682521551/Portfolio/projects/Screenshot_186_ancxhe.png"
     },
     {
       "title": "Meme Generator",
       "tag": "Front-end",
-      "description": ["Developed a front-end web application using React, JavaScript, HTML, and CSS.",
-                      "Integrated the imgFlip API to allow users to generate memes using pre-defined templates.",
-                      "Implemented features such as selecting a template and adding custom text to the meme."],
+      "description": "Unleash your creativity and laughter with our Meme Generator—your one-stop hub for crafting hilarious, viral-worthy memes that will leave your friends ROFL-ing. Memes made easy, memes made awesome!",
       "github": "https://github.com/Shourya1112/Meme-Generator",
       "liveUrl": "https://meme-generator-sm.netlify.app/",
       "imgSrc": "https://res.cloudinary.com/dkrinlbmx/image/upload/v1682526473/Portfolio/projects/Screenshot_10_nbmkhb.png"
+    },
+    {
+      "title": "This Portfolio",
+      "tag": "Front-end",
+      "description": " Introducing my portfolio website project, a captivating digital showcase of my skills, creativity, and passion. Not much to say here! This one just gave me a good excuse to spend a weekend practicing with skills and also get use Material UI a bit. Join me on this visual journey as I bring my ideas to life and leave a lasting impression. Stay tuned for future updates as I continue to expand my portfolio with more exciting projects.",
+      "github": "https://github.com/Shourya1112/Meme-Generator",
+      "imgSrc": "https://res.cloudinary.com/dkrinlbmx/image/upload/v1684228394/Portfolio/projects/Screenshot_18_tbttcu.png"
     }
   ]
 }

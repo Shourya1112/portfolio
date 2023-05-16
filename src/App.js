@@ -11,11 +11,10 @@ function App() {
 
   React.useEffect(() => {
       const handleResize = () => {
+        setIsMobile(window.innerWidth <= 900);
         window.location.reload();
       };
-  
       window.addEventListener('resize', handleResize);
-  
       return () => {
         window.removeEventListener('resize', handleResize);
       };

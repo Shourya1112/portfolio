@@ -24,7 +24,7 @@ const About = () => {
                 --About
                 </Typography>
                 <Typography
-                sx={{ fontSize: "1.2rem" , color: "#FAF9F6" }}
+                sx={{ fontSize: "1.3rem" , color: "#f5f5f5" , lineHeight: "1.6" }}
                 >
                 Tech enthusiast turned full stack developer. Passionate about creating seamless user experiences through clean and efficient code. Equipped with a diverse skill set in front-end and back-end technologies, I strive to bring innovative solutions to life. Ready to tackle challenges and make a positive impact in the digital world.
                 </Typography>
