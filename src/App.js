@@ -9,13 +9,17 @@ import '@mui/icons-material';
 function App() {
   const [ isMobile , setIsMobile ] = React.useState(window.innerWidth <= 900)
 
-  const handleResize = () => setIsMobile(window.innerWidth <= 900);
-
   React.useEffect(() => {
-    window.addEventListener("resize", () => handleResize);
-    return () => window.removeEventListener("resize", () => handleResize);
-  }, []);
-
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 900);
+        window.location.reload();
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
   const theme = createTheme({
     palette: {
       mode: "dark",
@@ -29,8 +33,8 @@ function App() {
     },
   }
 })
-  
-  const Scrollbar = styled(Box) (() => ({
+
+const Scrollbar = styled(Box) (() => ({
    '&:hover::-webkit-scrollbar': {
         display: 'block',
         },
@@ -49,39 +53,26 @@ function App() {
         },
 }))
 
-const BoxScroll = styled(Box) (() => ({
-      height: "80vh",
-      borderRadius: "30px",
-      padding: "10px",
-      overflow: "scroll",
-      scrollBehavior: "smooth",
-      "&::-webkit-scrollbar": {display: "none",}
-  }))
-
 const commonStyle = {
       backgroundColor: "#101010",
       borderRadius: "30px",
 }
     
-const Animation = styled(Box) (() => ({
+const Animation = styled(Box) (() => ( isMobile ? "Box" : {
     transform: "scale(1)",
 
     '&:hover': {
     transform: "scale(1.03)",
+    transition: "0.4s"
     }
 }))
-
-
-// const vh = document.documentElement.clientHeight;
-// const vw = document.documentElement.clientWidth;
-// console.log(vh, vw)
 
   return (
     <Scrollbar>
     <ThemeProvider theme={theme}>
     <Box minWidth={ isMobile ? null : "1500px"}>
 
-      <Box component={"div"} padding={ isMobile ? "10px" : "30px" }>
+      <Box component={"div"} padding={ isMobile ? "15px" : "30px" }>
       <CssBaseline />
         <Nav style={commonStyle} Animation={Animation} Mobile={isMobile}/>
         <Home Animation={Animation} Mobile={isMobile}/>

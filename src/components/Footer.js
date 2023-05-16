@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Stack, IconButton , Box , Typography} from "@mui/material";
+import { GitHub , LinkedIn } from '@mui/icons-material';
 
 const Footer = (props) => {
     const Mobile = props.Mobile;
@@ -51,7 +52,10 @@ const Footer = (props) => {
             textAlign: "center"
         },
         side: {
-            
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
         },
         contact: {
             fontSize: "1.5rem",
@@ -59,7 +63,8 @@ const Footer = (props) => {
         },
         contactInfo: {
             fontSize: "1.2rem",
-            textAlign: "center"
+            textAlign: "center",
+            marginBottom: "10px"
         }
     }
 
@@ -73,7 +78,25 @@ const Footer = (props) => {
             <Box className="footer-side" style={( Mobile ? phoneStyles : pcStyles).side}>
                 <Typography className="footer-contact" style={( Mobile ? phoneStyles : pcStyles).contact}>Contact Info:</Typography>
                 <br/>
-                <Typography className="footer-contactInfo" style={( Mobile ? phoneStyles : pcStyles).contactInfo}>Email: Shourya.desk@gmail.com <br/> Phone: +91 81306 76218</Typography>
+                <Typography className="footer-contactInfo" style={( Mobile ? phoneStyles : pcStyles).contactInfo}>Email: Shourya.desk@gmail.com</Typography>
+                { Mobile ? <Stack direction={"row"} spacing={5} >
+                    <IconButton 
+                    size="large" 
+                    href="https://www.linkedin.com/in/shourya-mishra-6b730322b/"
+                    target="_blank"
+                    >
+                    <LinkedIn fontSize="large"/>
+                    </IconButton>
+
+                    <IconButton 
+                    size="large" 
+                    href="https://github.com/Shourya1112"
+                    target="_blank"
+                    >
+                    <GitHub fontSize="large"/>
+                    </IconButton>
+                    </Stack> : null
+                }
             </Box>
         </Box>
     )

@@ -15,7 +15,7 @@ const Hero = () => {
                 />
             </Box>  
             <Box 
-            sx={{ padding: "30px" }}
+            sx={{ paddingInline: "30px" }}
             >   
                 <Typography sx={{ color: "yellow" , fontWeight: "bold" , fontSize: "3rem" , display: "inline-block"}}>Hi</Typography>
                 <Typography  
