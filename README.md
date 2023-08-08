@@ -40,10 +40,6 @@ If you're interested in exploring the website locally, follow these steps:
 4. Launch the development server: `npm start`
 5. Access the website at `http://localhost:3000`
 
-## Contributions
-
-If you identify any issues or have suggestions for enhancements, please consider contributing by submitting a pull request or raising an issue in the [repository](https://github.com/your-username/your-portfolio-repo).
-
 ## Contact
 
 For any communication or queries, feel free to use the contact form on the website or reach out via email at [shourya.desk@email.com](mailto:shourya.desk@email.com).
