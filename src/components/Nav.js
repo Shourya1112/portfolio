@@ -113,7 +113,7 @@ function Nav(props) {
             <Divider orientation="vertical" flexItem />
             <Animation>
                 <Button style={( Mobile ? navStylesPhone : navStyles).resumebtn} 
-                href="https://drive.google.com/file/d/1GAEwm72fWAC5RIcqDPW8CDB2-rjOK1Ul/view?usp=share_link"
+                href="https://drive.google.com/file/d/1JbyVNQ_kB9opZ_whDfU-_yBwYGQsbaGN/view?usp=drive_link"
                 target="_blank"
                 >
                     <TextSnippetRounded size="large" color="#050505" sx={{ marginRight: "10px" }}/>
